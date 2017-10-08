@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method='POST'>
+    <div>    
+        <label>Username<input type="text" name="username" value='{{ username }}'/>
+        {% if username_error %}
+        <span class='error'>{{ username_error }}</span>
+        {% endif %}
+        </label>
+    </div>
+
+    </br>   
+    
+    <div>
+        <label>Password<input type="password" name="password" value='{{ password }}'/>
+        {% if password_error %}
+        <span class='error'>{{ password_error }}</span>
+        {% endif %}
+        </label>
+    </div>
+    
+    </br>
+    
+    <div>
+        <label>Re-Enter Password<input type="password" name="reenter" value='{{ reenter }}'/>
+        {% if reenter_error %}
+        <span class='error'>{{ reenter_error }}</span>
+        {% endif %}
+        </label>
+    </div>
+
+    </br>
+    
+    <div>
+        <label>Email (optional)<input type="text" name="email" value='{{ email }}'/>
+        {% if email_error %}
+        <span class='error'>{{ email_error }}</span>
+        {% endif %}
+        </label>
+    </div>
+    
+    </br>
+    
+    <input type="submit" value="Submit Information"/>
+
+</form>
+{% endblock %}
